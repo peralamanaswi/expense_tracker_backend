@@ -1,0 +1,24 @@
+{
+  "name": "ai-expense-tracker-backend",
+  "version": "1.0.0",
+  "description": "Express API for an AI-powered OCR expense tracker",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "tesseract.js": "^4.0.3",
+    "@google-cloud/vision": "^5.2.0",
+    "@google/genai": "^2.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5",
+    "multer": "^2.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
