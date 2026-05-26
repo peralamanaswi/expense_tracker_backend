@@ -5,7 +5,12 @@ import { createWorker } from "tesseract.js";
 export const extractTextFromImage = async (filePath) => {
   const absolutePath = path.resolve(filePath);
   try {
-    const client = new vision.ImageAnnotatorClient();
+    //const client = new vision.ImageAnnotatorClient();
+    const client = new vision.ImageAnnotatorClient({
+  credentials: JSON.parse(
+    process.env.GOOGLE_APPLICATION_CREDENTIALS
+  ),
+});
     const [result] = await client.textDetection(absolutePath);
     const detections = result.textAnnotations || [];
     return detections[0]?.description?.trim() || "";
